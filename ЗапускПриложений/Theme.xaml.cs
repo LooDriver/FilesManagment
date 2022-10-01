@@ -35,17 +35,17 @@ namespace Zapyck_igr
 
         private void Theme13_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Resources.Clear();
-            LinearGradientBrush gradientBrush = new LinearGradientBrush();
-            gradientBrush.GradientStops.Add(new GradientStop(Colors.LightGray, 0));
-            gradientBrush.GradientStops.Add(new GradientStop(Colors.White, 1));
-            //this.Resources.Add("Theme13Style", gradientBrush);
-            DynamicResourceExtension dynamic = new DynamicResourceExtension();
+            //Application.Current.Resources.Clear();
+            //LinearGradientBrush gradientBrush = new LinearGradientBrush();
+            //gradientBrush.GradientStops.Add(new GradientStop(Colors.LightGray, 0));
+            //gradientBrush.GradientStops.Add(new GradientStop(Colors.White, 1));
+            ////this.Resources.Add("Theme13Style", gradientBrush);
+            //DynamicResourceExtension dynamic = new DynamicResourceExtension();
 
-            Resources.Add("Theme13Style");
+            //Resources.Add("Theme13Style");
             
-            Settings set = new Settings();
-            set.SetResourceReference(Settings.ForegroundProperty, "Theme13Style");
+            //Settings set = new Settings();
+            //set.SetResourceReference(Settings.ForegroundProperty, "Theme13Style");
         }
     }
 }
