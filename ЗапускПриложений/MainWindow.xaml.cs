@@ -8,7 +8,6 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Navigation;
 
 namespace Zapyck_igr
 {
@@ -22,7 +21,7 @@ namespace Zapyck_igr
         Database db = new Database();
         DirectoryInfo extensionFile;
 
-        public int switcherFilter;
+        public int switcherFilter = 1;
         public readonly List<string> extentionsFilesAll = new List<string>
         {
             ".docx", ".xlsx", ".pptx", ".exe", ".pdf", ".txt"
@@ -32,11 +31,10 @@ namespace Zapyck_igr
         {
             InitializeComponent();
             db.win = this;
-            switcherFilter = 1;
             AllFilesBut.Header = "--> Все файлы";
             if (db.Connect("filesindb.db"))
             {
-                db.ReloadDB();
+                db.DBCommandSelect();
             }
         }
         private class Database
@@ -68,13 +66,12 @@ namespace Zapyck_igr
                 using (SQLiteConnection connect = new SQLiteConnection($"Data Source={_connectString}"))
                 {
                     await connect.OpenAsync();
-                    using (SQLiteCommand command = new SQLiteCommand())
+                    using (SQLiteCommand command = new SQLiteCommand(connect))
                     {
                         switch (win.switcherFilter)
                         {
                             case 1:
                                 {
-                                    command.Connection = connect;
                                     command.CommandText = $"DELETE FROM ОбщиеФайлы WHERE НазваниеФайла = '{selectedStr}' or ПутьДоФайла = '{selectedStr}'";
                                     await command.ExecuteNonQueryAsync();
                                     command.Dispose();
@@ -82,19 +79,21 @@ namespace Zapyck_igr
                                 }
                             case 2:
                                 {
-                                    command.Connection = connect;
                                     command.CommandText = $"DELETE FROM ТолькоДокументы WHERE НазваниеДокумента = '{selectedStr}' or ПутьДоДокумента = '{selectedStr}'";
                                     await command.ExecuteNonQueryAsync();
                                     command.Dispose();
                                     break;
                                 }
                         }
-
-
                     }
                     connect.Dispose();
-                    await ReloadDB();
+                    await DBCommandSelect();
                 }
+            }
+            public async Task DBCommandSelect()
+            {
+                if (win.switcherFilter == 1) { await ReloadDB("SELECT НазваниеФайла, ПутьДоФайла from ОбщиеФайлы"); }
+                else if (win.switcherFilter == 2) { await ReloadDB("SELECT НазваниеДокумента, ПутьДоДокумента FROM ТолькоДокументы"); }
             }
             public async Task UploadDB(string fileName, string usrLoadFile, string fileExtension)
             {
@@ -133,42 +132,22 @@ namespace Zapyck_igr
                         }
                     }
                     connect.Dispose();
-                    await ReloadDB();
+                    await DBCommandSelect();
                 }
             }
-            public async Task ReloadDB()
+            public async Task ReloadDB(string SQLCommand)
             {
                 using (SQLiteConnection connect = new SQLiteConnection($@"Data Source={_connectString}"))
                 {
                     await connect.OpenAsync();
-                    using (SQLiteCommand command = new SQLiteCommand(connect))
+                    using (SQLiteCommand command = new SQLiteCommand(SQLCommand, connect))
                     {
-                        switch (win.switcherFilter)
-                        {
-                            case 1:
-                                {
-                                    command.CommandText = "SELECT НазваниеФайла, ПутьДоФайла from ОбщиеФайлы";
-                                    await command.ExecuteReaderAsync();
-                                    SQLiteDataAdapter adapter = new SQLiteDataAdapter(command.CommandText, connect);
-                                    DataTable data = new DataTable();
-                                    adapter.Fill(data);
-                                    win.AllApp.ItemsSource = data.DefaultView;
-                                    command.Dispose();
-                                    break;
-                                }
-                            case 2:
-                                {
-                                    command.CommandText = "SELECT НазваниеДокумента, ПутьДоДокумента FROM ТолькоДокументы";
-                                    await command.ExecuteReaderAsync();
-                                    SQLiteDataAdapter adapter = new SQLiteDataAdapter(command.CommandText, connect);
-                                    DataTable data = new DataTable();
-                                    adapter.Fill(data);
-                                    win.AllApp.ItemsSource = data.DefaultView;
-                                    command.Dispose();
-                                    break;
-                                }
-                        }
-
+                        await command.ExecuteReaderAsync();
+                        SQLiteDataAdapter adapter = new SQLiteDataAdapter(command.CommandText, connect);
+                        DataTable data = new DataTable();
+                        adapter.Fill(data);
+                        win.AllApp.ItemsSource = data.DefaultView;
+                        command.Dispose();
                     }
                     connect.Dispose();
                 }
@@ -245,7 +224,7 @@ namespace Zapyck_igr
                                                             com.CommandText = $"update ОбщиеФайлы set ПутьДоФайла = '{file}' where ПутьДоФайла = '{SelectedStr}' or НазваниеФайла = '{SelectedStr}'";
                                                             await com.ExecuteNonQueryAsync();
                                                             com.Dispose();
-                                                            await db.ReloadDB();
+                                                            await db.DBCommandSelect();
                                                             Process.Start(file);
                                                             break;
                                                         }
@@ -283,7 +262,7 @@ namespace Zapyck_igr
                                                             com.CommandText = $"update ТолькоДокументы set ПутьДоДокумента = '{file}' where ПутьДоДокумента = '{SelectedStr}' or НазваниеДокумента = '{SelectedStr}'";
                                                             await com.ExecuteNonQueryAsync();
                                                             com.Dispose();
-                                                            await db.ReloadDB();
+                                                            await db.DBCommandSelect();
                                                             Process.Start(file);
                                                             break;
                                                         }
@@ -326,8 +305,6 @@ namespace Zapyck_igr
                     await logs.WriteLineAsync($"Исключение: {exception.Message}\nСтек вызова: {exception.StackTrace}");
                 }
             }
-
-
         }
         private async void StartingApp_Click(object sender, RoutedEventArgs e)
         {
@@ -366,7 +343,7 @@ namespace Zapyck_igr
                                                             com.CommandText = $"update ОбщиеФайлы set ПутьДоФайла = '{file}' where ПутьДоФайла = '{SelectedStr}' or НазваниеФайла = '{SelectedStr}'";
                                                             await com.ExecuteNonQueryAsync();
                                                             com.Dispose();
-                                                            await db.ReloadDB();
+                                                            await db.DBCommandSelect();
                                                             Process.Start(file);
                                                             break;
                                                         }
@@ -404,7 +381,7 @@ namespace Zapyck_igr
                                                             com.CommandText = $"update ТолькоДокументы set ПутьДоДокумента = '{file}' where ПутьДоДокумента = '{SelectedStr}' or НазваниеДокумента = '{SelectedStr}'";
                                                             await com.ExecuteNonQueryAsync();
                                                             com.Dispose();
-                                                            await db.ReloadDB();
+                                                            await db.DBCommandSelect();
                                                             Process.Start(file);
                                                             break;
                                                         }
@@ -482,7 +459,7 @@ namespace Zapyck_igr
             AllFilesBut.Header = "--> Все файлы";
             OnlyDocumentsFilesBut.Header = "Только документы";
             switcherFilter = 1;
-            await db.ReloadDB();
+            await db.DBCommandSelect();
         }
 
         private async void OnlyDocumentsFilesBut_Click(object sender, RoutedEventArgs e)
@@ -490,7 +467,7 @@ namespace Zapyck_igr
             AllFilesBut.Header = "Все файлы";
             OnlyDocumentsFilesBut.Header = "--> Только документы";
             switcherFilter = 2;
-            await db.ReloadDB();
+            await db.DBCommandSelect();
         }
         public static IEnumerable<string> EnumerateFiles(string path, string searchPattern, SearchOption searchOpt)
         {
