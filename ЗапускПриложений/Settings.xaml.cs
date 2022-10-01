@@ -29,6 +29,7 @@ namespace Zapyck_igr
         {
             MainWindow win = new MainWindow();
             win.Show();
+            
         }
 
         private void Themes_Click(object sender, RoutedEventArgs e)
