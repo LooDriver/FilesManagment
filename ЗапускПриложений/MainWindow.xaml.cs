@@ -494,5 +494,11 @@ namespace Zapyck_igr
                 await db.DeleteDB(SelectedStr);
             }
         }
+        protected override void OnClosed(EventArgs e)
+        {
+            base.OnClosed(e);
+
+            App.Current.Shutdown();
+        }
     }
 }
