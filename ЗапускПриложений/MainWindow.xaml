@@ -1,0 +1,155 @@
+﻿<Window
+    x:Class="Zapyck_igr.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Zapyck_igr"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Name="MainWin"
+    Title="Запуск игр"
+    Width="800"
+    Height="450"
+    Background="Black"
+    Foreground="{x:Null}"
+    Icon="folder.png"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Window.Resources>
+        <Style x:Key="Buttons">
+            <Setter Property="Control.FontSize" Value="15" />
+            <Setter Property="Control.FontFamily" Value="Aerial" />
+            <Setter Property="Control.FontWeight" Value="Bold" />
+            <Setter Property="Control.Background" Value="Transparent" />
+            <Setter Property="Control.Foreground" Value="White" />
+        </Style>
+        <Style x:Key="MenuItems">
+            <Setter Property="Control.Foreground" Value="Black" />
+        </Style>
+    </Window.Resources>
+    <Grid x:Name="MainContainer" Style="{DynamicResource MainWindowStyle}">
+        <DataGrid
+            Name="AllApp"
+            Width="794"
+            Height="287"
+            Margin="0,35,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            AlternatingRowBackground="Transparent"
+            Background="Transparent"
+            BorderBrush="Transparent"
+            FontWeight="Bold"
+            Foreground="Black"
+            GotFocus="AllApp_GotFocus"
+            GridLinesVisibility="All"
+            HorizontalGridLinesBrush="Transparent"
+            IsReadOnly="True"
+            MouseDoubleClick="AllApp_MouseDoubleClick"
+            RowBackground="Transparent"
+            SelectedIndex="0" />
+        <Button
+            Name="SelectApp"
+            Width="158"
+            Height="28"
+            Margin="0,356,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="SelectApp_Click"
+            Content="Выбор приложения"
+            Style="{StaticResource Buttons}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="StartingApp"
+            Width="158"
+            Height="28"
+            Margin="118,356,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="StartingApp_Click"
+            Content="Запуск приложений"
+            Style="{StaticResource Buttons}">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="DeleteApp"
+            Width="166"
+            Height="28"
+            Margin="512,356,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Удалить приложение"
+            Click="DeleteApp_Click"
+            >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Style>
+                <StaticResource ResourceKey="Buttons" />
+            </Button.Style>
+        </Button>
+        <Menu
+            Margin="0,0,0,386"
+            Background="Transparent"
+            FontWeight="Bold"
+            Foreground="White">
+            <MenuItem Height="20" Header="Файл">
+                <MenuItem
+                    Name="Settings"
+                    Click="Settings_Click"
+                    Header="Настройки"
+                    Style="{StaticResource MenuItems}" />
+                <MenuItem
+                    Name="ExitMenu"
+                    Click="ExitMenu_Click"
+                    Header="Выход"
+                    Style="{StaticResource MenuItems}" />
+            </MenuItem>
+            <MenuItem Header="Фильтр">
+                <MenuItem
+                    x:Name="OnlyDocumentsFilesBut"
+                    Click="OnlyDocumentsFilesBut_Click"
+                    Header="Только документы"
+                    Style="{StaticResource MenuItems}" />
+                <!--<MenuItem
+                    x:Name="OnlyGamesFilesBut"
+                    Click="OnlyGamesFilesBut_Click"
+                    Header="Только программы и игры"
+                    Style="{StaticResource MenuItems}" />-->
+                <MenuItem
+                    x:Name="AllFilesBut"
+                    Click="AllFilesBut_Click"
+                    Header="Все"
+                    Style="{StaticResource MenuItems}"
+                    ToolTip="Все игры, программы и документы" />
+            </MenuItem>
+            <MenuItem Header="Справка">
+                <MenuItem
+                    Name="AboutDevelMenu"
+                    Click="AboutDevelMenu_Click"
+                    Header="Разработчик"
+                    Style="{StaticResource MenuItems}" />
+                <MenuItem
+                    Name="AboutProgMenu"
+                    Click="AboutProgMenu_Click"
+                    Header="О программе"
+                    Style="{StaticResource MenuItems}" />
+                <MenuItem
+                    Name="Dizayner"
+                    Click="Dizayner_Click"
+                    Header="Дизайнер"
+                    Style="{StaticResource MenuItems}" />
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>

@@ -1,0 +1,754 @@
+﻿<Page
+    x:Class="Zapyck_igr.Theme"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Zapyck_igr"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Themes"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <Style x:Key="ButtonInThemes">
+            <Setter Property="ItemsControl.Foreground" Value="White" />
+            <Setter Property="Control.FontSize" Value="15" />
+            <Setter Property="Control.FontFamily" Value="Aerial" />
+            <Setter Property="Control.FontWeight" Value="Bold" />
+        </Style>
+    </Page.Resources>
+    <Grid>
+        
+        <Button
+            x:Name="Theme1"
+            Width="110"
+            Margin="0,27,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 1"
+            Style="{StaticResource ButtonInThemes}" Click="Theme1_Click">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop1" Offset="0.5" Color="#333333" />
+                    <GradientStop x:Name="GradientStop2" Offset="1" Color="#1F1287" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop1"
+                                Storyboard.TargetProperty="Color"
+                                From="#333333"
+                                To="#1F1287"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop2"
+                                Storyboard.TargetProperty="Color"
+                                From="#1F1287"
+                                To="#333333"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="Theme2"
+            Width="110"
+            Margin="0,54,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 2"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop3" Offset="0.5" Color="#0f2845" />
+                    <GradientStop x:Name="GradientStop4" Offset="1" Color="#456786" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop3"
+                                Storyboard.TargetProperty="Color"
+                                From="#0f2845"
+                                To="#456786"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop4"
+                                Storyboard.TargetProperty="Color"
+                                From="#456786"
+                                To="#0f2845"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="Theme3"
+            Width="110"
+            Margin="0,81,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 3"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop5" Offset="0.5" Color="#3ab3b0" />
+                    <GradientStop x:Name="GradientStop6" Offset="1" Color="#55367d" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop5"
+                                Storyboard.TargetProperty="Color"
+                                From="#3ab3b0"
+                                To="#55367d"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop6"
+                                Storyboard.TargetProperty="Color"
+                                From="#3ab3b0"
+                                To="#55367d"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="Theme4"
+            Width="110"
+            Margin="0,108,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 4"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop7" Offset="0.5" Color="#595e98" />
+                    <GradientStop x:Name="GradientStop8" Offset="1" Color="#aaa4e0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop7"
+                                Storyboard.TargetProperty="Color"
+                                From="#595e98"
+                                To="#aaa4e0"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop8"
+                                Storyboard.TargetProperty="Color"
+                                From="#aaa4e0"
+                                To="#595e98"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button
+            x:Name="Theme5"
+            Width="110"
+            Margin="0,135,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 5"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop9" Offset="0.5" Color="#286987" />
+                    <GradientStop x:Name="GradientStop10" Offset="1" Color="#002245" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop9"
+                                Storyboard.TargetProperty="Color"
+                                From="#286987"
+                                To="#002245"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop10"
+                                Storyboard.TargetProperty="Color"
+                                From="#002245"
+                                To="#286987"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button
+            x:Name="Theme6"
+            Width="110"
+            Margin="126,27,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 6"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop11" Offset="0.5" Color="#1F1287" />
+                    <GradientStop x:Name="GradientStop12" Offset="1" Color="#666666" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop11"
+                                Storyboard.TargetProperty="Color"
+                                From="#1F1287"
+                                To="#666666"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop12"
+                                Storyboard.TargetProperty="Color"
+                                From="#666666"
+                                To="#1F1287"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="Theme7"
+            Width="110"
+            Margin="126,54,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 7"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop13" Offset="0.5" Color="#456786" />
+                    <GradientStop x:Name="GradientStop14" Offset="1" Color="#0f2845" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop13"
+                                Storyboard.TargetProperty="Color"
+                                From="#456786"
+                                To="#0f2845"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop14"
+                                Storyboard.TargetProperty="Color"
+                                From="#0f2845"
+                                To="#456786"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="Theme8"
+            Width="110"
+            Margin="126,81,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 8"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop15" Offset="0.5" Color="#55367d" />
+                    <GradientStop x:Name="GradientStop16" Offset="1" Color="#3ab3b0" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop15"
+                                Storyboard.TargetProperty="Color"
+                                From="#55367d"
+                                To="#3ab3b0"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop16"
+                                Storyboard.TargetProperty="Color"
+                                From="#3ab3b0"
+                                To="#55367d"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button
+            x:Name="Theme9"
+            Width="110"
+            Margin="126,108,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 9"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop17" Offset="0.5" Color="#aaa4e0" />
+                    <GradientStop x:Name="GradientStop18" Offset="1" Color="#595e98" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop17"
+                                Storyboard.TargetProperty="Color"
+                                From="#aaa4e0"
+                                To="#595e98"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop18"
+                                Storyboard.TargetProperty="Color"
+                                From="#595e98"
+                                To="#aaa4e0"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button
+            x:Name="Theme10"
+            Width="110"
+            Margin="126,135,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Тема 10"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop19" Offset="0.5" Color="#002245" />
+                    <GradientStop x:Name="GradientStop20" Offset="1" Color="#286987" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop19"
+                                Storyboard.TargetProperty="Color"
+                                From="#002245"
+                                To="#286987"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop20"
+                                Storyboard.TargetProperty="Color"
+                                From="#286987"
+                                To="#002245"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button
+            x:Name="Theme11"
+            Width="236"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Black and White"
+            Foreground="Red"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop21" Offset="0.5" Color="Black" />
+                    <GradientStop x:Name="GradientStop22" Offset="1" Color="White" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop21"
+                                Storyboard.TargetProperty="Color"
+                                From="Black"
+                                To="White"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop22"
+                                Storyboard.TargetProperty="Color"
+                                From="White"
+                                To="Black"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button
+            x:Name="Theme12"
+            Width="236"
+            Margin="0,189,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="White and Black"
+            Foreground="Red"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop23" Offset="0.5" Color="White" />
+                    <GradientStop x:Name="GradientStop24" Offset="1" Color="Black" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop23"
+                                Storyboard.TargetProperty="Color"
+                                From="White"
+                                To="Black"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop24"
+                                Storyboard.TargetProperty="Color"
+                                From="Black"
+                                To="White"
+                                Duration="0:0:2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button
+            x:Name="Theme13"
+            Width="110"
+            Margin="0,162,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Гирлянда"
+            Style="{StaticResource ButtonInThemes}" Click="Theme13_Click" >
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop25" Offset="0" Color="Black" />
+                    <GradientStop x:Name="GradientStop26" Offset="0.1" Color="Green" />
+                    <GradientStop x:Name="GradientStop27" Offset="0.2" Color="Black" />
+                    <GradientStop x:Name="GradientStop28" Offset="0.3" Color="DarkRed" />
+                    <GradientStop x:Name="GradientStop29" Offset="0.4" Color="Black" />
+                    <GradientStop x:Name="GradientStop30" Offset="0.5" Color="Gold" />
+                    <GradientStop x:Name="GradientStop31" Offset="0.6" Color="Black" />
+                    <GradientStop x:Name="GradientStop32" Offset="0.7" Color="DarkBlue" />
+                    <GradientStop x:Name="GradientStop33" Offset="0.8" Color="Black" />
+                    <GradientStop x:Name="GradientStop34" Offset="0.9" Color="Purple" />
+                    <GradientStop x:Name="GradientStop35" Offset="1" Color="Black" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded" >
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop25"
+                                Storyboard.TargetProperty="Color"
+                                From="Green"
+                                To="Purple"
+                                Duration="0:0:0.1" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop27"
+                                Storyboard.TargetProperty="Color"
+                                From="DarkRed"
+                                To="DarkBlue"
+                                Duration="0:0:0.1" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop29"
+                                Storyboard.TargetProperty="Color"
+                                From="Gold"
+                                To="White"
+                                Duration="0:0:0.1" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop31"
+                                Storyboard.TargetProperty="Color"
+                                From="DarkBlue"
+                                To="DarkRed"
+                                Duration="0:0:0.1" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop33"
+                                Storyboard.TargetProperty="Color"
+                                From="Purple"
+                                To="Green"
+                                Duration="0:0:0.1" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+        <Button
+            x:Name="Theme14"
+            Width="110"
+            Margin="126,162,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Красота"
+            Style="{StaticResource ButtonInThemes}">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="7" />
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="GradientStop36" Offset="0" Color="Green" />
+                    <GradientStop x:Name="GradientStop37" Offset="0.1" Color="Red" />
+                    <GradientStop x:Name="GradientStop38" Offset="0.2" Color="Yellow" />
+                    <GradientStop x:Name="GradientStop39" Offset="0.3" Color="DarkBlue" />
+                    <GradientStop x:Name="GradientStop40" Offset="0.4" Color="Purple" />
+                    <GradientStop x:Name="GradientStop41" Offset="0.5" Color="DarkOrange" />
+                    <GradientStop x:Name="GradientStop42" Offset="0.6" Color="Pink" />
+                    <GradientStop x:Name="GradientStop43" Offset="0.7" Color="Blue" />
+                    <GradientStop x:Name="GradientStop44" Offset="0.8" Color="LightBlue" />
+                    <GradientStop x:Name="GradientStop45" Offset="0.9" Color="DarkGreen" />
+                    <GradientStop x:Name="GradientStop46" Offset="1" Color="Gold" />
+                </LinearGradientBrush>
+            </Button.Background>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop36"
+                                Storyboard.TargetProperty="Color"
+                                From="Green"
+                                To="Red"
+                                Duration="0:0:2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop37"
+                                Storyboard.TargetProperty="Color"
+                                From="Red"
+                                To="Yellow"
+                                Duration="0:0:2.1" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop38"
+                                Storyboard.TargetProperty="Color"
+                                From="Yellow"
+                                To="DarkBlue"
+                                Duration="0:0:2.2" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop39"
+                                Storyboard.TargetProperty="Color"
+                                From="DarkBlue"
+                                To="Purple"
+                                Duration="0:0:2.3" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop40"
+                                Storyboard.TargetProperty="Color"
+                                From="Purple"
+                                To="DarkOrange"
+                                Duration="0:0:2.4" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop41"
+                                Storyboard.TargetProperty="Color"
+                                From="DarkOrange"
+                                To="Pink"
+                                Duration="0:0:2.5" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop42"
+                                Storyboard.TargetProperty="Color"
+                                From="Pink"
+                                To="Blue"
+                                Duration="0:0:2.6" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop43"
+                                Storyboard.TargetProperty="Color"
+                                From="Blue"
+                                To="LightBlue"
+                                Duration="0:0:2.7" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop44"
+                                Storyboard.TargetProperty="Color"
+                                From="LightBlue"
+                                To="DarkGreen"
+                                Duration="0:0:2.8" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop45"
+                                Storyboard.TargetProperty="Color"
+                                From="DarkGreen"
+                                To="Gold"
+                                Duration="0:0:2.9" />
+                            <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="GradientStop46"
+                                Storyboard.TargetProperty="Color"
+                                From="Gold"
+                                To="Green"
+                                Duration="0:0:3" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+    </Grid>
+</Page>
