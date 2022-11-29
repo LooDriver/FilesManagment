@@ -9,10 +9,8 @@
     Title="Запуск игр"
     Width="800"
     Height="450"
-    Background="Black"
-    Foreground="{x:Null}"
     Icon="folder.png"
-    ResizeMode="NoResize"
+    Style="{DynamicResource WindowSettings}"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>

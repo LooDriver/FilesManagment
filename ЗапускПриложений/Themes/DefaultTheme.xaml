@@ -23,4 +23,9 @@
         <Setter Property="DataGrid.RowBackground" Value="Transparent"/>
         <Setter Property="DataGrid.GridLinesVisibility" Value="All"/>
     </Style>
+    <Style x:Key="WindowSettings">
+        <Setter Property="Window.Background" Value="Black"/>
+        <Setter Property="Window.Foreground" Value="Transparent"/>
+        <Setter Property="Window.ResizeMode" Value="NoResize"/>
+    </Style>
 </ResourceDictionary>
