@@ -16,37 +16,20 @@
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Window.Resources>
-        <Style x:Key="Buttons">
-            <Setter Property="Control.FontSize" Value="15" />
-            <Setter Property="Control.FontFamily" Value="Aerial" />
-            <Setter Property="Control.FontWeight" Value="Bold" />
-            <Setter Property="Control.Background" Value="Transparent" />
-            <Setter Property="Control.Foreground" Value="White" />
-        </Style>
-        <Style x:Key="MenuItems">
-            <Setter Property="Control.Foreground" Value="Black" />
-        </Style>
+        <ResourceDictionary Source="./Themes/DefaultTheme.xaml"/>
     </Window.Resources>
-    <Grid x:Name="MainContainer" Style="{DynamicResource MainWindowStyle}">
+    <Grid x:Name="MainContainer">
         <DataGrid
             Name="AllApp"
             Width="794"
             Height="287"
             Margin="0,35,0,0"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            AlternatingRowBackground="Transparent"
-            Background="Transparent"
-            BorderBrush="Transparent"
-            FontWeight="Bold"
-            Foreground="Black"
             GotFocus="AllApp_GotFocus"
-            GridLinesVisibility="All"
-            HorizontalGridLinesBrush="Transparent"
             IsReadOnly="True"
             MouseDoubleClick="AllApp_MouseDoubleClick"
-            RowBackground="Transparent"
-            SelectedIndex="0" />
+            SelectedIndex="0" 
+            Style="{DynamicResource DataGridSettings}"
+            />
         <Button
             Name="SelectApp"
             Width="158"
@@ -56,7 +39,7 @@
             VerticalAlignment="Top"
             Click="SelectApp_Click"
             Content="Выбор приложения"
-            Style="{StaticResource Buttons}">
+            Style="{DynamicResource ButtonsSettings}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7" />
@@ -72,7 +55,7 @@
             VerticalAlignment="Top"
             Click="StartingApp_Click"
             Content="Запуск приложений"
-            Style="{StaticResource Buttons}">
+            Style="{DynamicResource ButtonsSettings}">
             <Button.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="7" />
@@ -88,39 +71,35 @@
             VerticalAlignment="Top"
             Content="Удалить приложение"
             Click="DeleteApp_Click"
+            Style="{DynamicResource ButtonsSettings}"
             >
             <Button.Resources>
                 <Style TargetType="{x:Type Border}">
                     <Setter Property="CornerRadius" Value="7" />
                 </Style>
             </Button.Resources>
-            <Button.Style>
-                <StaticResource ResourceKey="Buttons" />
-            </Button.Style>
         </Button>
         <Menu
             Margin="0,0,0,386"
             Background="Transparent"
             FontWeight="Bold"
             Foreground="White">
-            <MenuItem Height="20" Header="Файл">
+            <MenuItem Height="20" Header="Файл" Style="{DynamicResource MenuItemsSettings}">
                 <MenuItem
                     Name="Settings"
                     Click="Settings_Click"
-                    Header="Настройки"
-                    Style="{StaticResource MenuItems}" />
+                    Header="Настройки" />
                 <MenuItem
                     Name="ExitMenu"
                     Click="ExitMenu_Click"
-                    Header="Выход"
-                    Style="{StaticResource MenuItems}" />
+                    Header="Выход" />
             </MenuItem>
-            <MenuItem Header="Фильтр">
+            <MenuItem Header="Фильтр" Style="{DynamicResource MenuItemsSettings}"  >
                 <MenuItem
                     x:Name="OnlyDocumentsFilesBut"
                     Click="OnlyDocumentsFilesBut_Click"
                     Header="Только документы"
-                    Style="{StaticResource MenuItems}" />
+                    />
                 <!--<MenuItem
                     x:Name="OnlyGamesFilesBut"
                     Click="OnlyGamesFilesBut_Click"
@@ -130,25 +109,21 @@
                     x:Name="AllFilesBut"
                     Click="AllFilesBut_Click"
                     Header="Все"
-                    Style="{StaticResource MenuItems}"
                     ToolTip="Все игры, программы и документы" />
             </MenuItem>
-            <MenuItem Header="Справка">
+            <MenuItem Header="Справка" Style="{DynamicResource MenuItemsSettings}" >
                 <MenuItem
                     Name="AboutDevelMenu"
                     Click="AboutDevelMenu_Click"
-                    Header="Разработчик"
-                    Style="{StaticResource MenuItems}" />
+                    Header="Разработчик" />
                 <MenuItem
                     Name="AboutProgMenu"
                     Click="AboutProgMenu_Click"
-                    Header="О программе"
-                    Style="{StaticResource MenuItems}" />
+                    Header="О программе"/>
                 <MenuItem
                     Name="Dizayner"
                     Click="Dizayner_Click"
-                    Header="Дизайнер"
-                    Style="{StaticResource MenuItems}" />
+                    Header="Дизайнер" />
             </MenuItem>
         </Menu>
     </Grid>

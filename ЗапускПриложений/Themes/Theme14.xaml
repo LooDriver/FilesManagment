@@ -1,0 +1,106 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="GradBrush14">
+        <GradientStop x:Name="GradientStop36" Offset="0" Color="Green" />
+        <GradientStop x:Name="GradientStop37" Offset="0.1" Color="Red" />
+        <GradientStop x:Name="GradientStop38" Offset="0.2" Color="Yellow" />
+        <GradientStop x:Name="GradientStop39" Offset="0.3" Color="DarkBlue" />
+        <GradientStop x:Name="GradientStop40" Offset="0.4" Color="Purple" />
+        <GradientStop x:Name="GradientStop41" Offset="0.5" Color="DarkOrange" />
+        <GradientStop x:Name="GradientStop42" Offset="0.6" Color="Pink" />
+        <GradientStop x:Name="GradientStop43" Offset="0.7" Color="Blue" />
+        <GradientStop x:Name="GradientStop44" Offset="0.8" Color="LightBlue" />
+        <GradientStop x:Name="GradientStop45" Offset="0.9" Color="DarkGreen" />
+        <GradientStop x:Name="GradientStop46" Offset="1" Color="Gold" />
+    </LinearGradientBrush>
+    <Storyboard x:Key="AnimationTheme14">
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop36}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="Green"
+                                To="Red"
+                                Duration="0:0:2" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop37}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="Red"
+                                To="Yellow"
+                                Duration="0:0:2.1" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop38}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="Yellow"
+                                To="DarkBlue"
+                                Duration="0:0:2.2" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop39}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="DarkBlue"
+                                To="Purple"
+                                Duration="0:0:2.3" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop40}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="Purple"
+                                To="DarkOrange"
+                                Duration="0:0:2.4" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop41}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="DarkOrange"
+                                To="Pink"
+                                Duration="0:0:2.5" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop42}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="Pink"
+                                To="Blue"
+                                Duration="0:0:2.6" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop43}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="Blue"
+                                To="LightBlue"
+                                Duration="0:0:2.7" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop44}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="LightBlue"
+                                To="DarkGreen"
+                                Duration="0:0:2.8" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop45}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="DarkGreen"
+                                To="Gold"
+                                Duration="0:0:2.9" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop46}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="Gold"
+                                To="Green"
+                                Duration="0:0:3" />
+    </Storyboard>
+</ResourceDictionary>

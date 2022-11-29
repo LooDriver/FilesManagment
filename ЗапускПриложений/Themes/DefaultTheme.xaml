@@ -1,0 +1,26 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="ButtonsSettings">
+        <Setter Property="Button.FontSize" Value="15"/>
+        <Setter Property="Button.FontFamily" Value="Aerial"/>
+        <Setter Property="Button.FontWeight" Value="Bold"/>
+        <Setter Property="Button.Background" Value="Transparent"/>
+        <Setter Property="Button.Foreground" Value="White"/>
+    </Style>
+
+    <Style x:Key="MenuItemsSettings">
+        <Setter Property="Menu.Foreground" Value="White"/>
+    </Style>
+    <Style x:Key="DataGridSettings">
+        <Setter Property="DataGrid.HorizontalAlignment" Value="Center"/>
+        <Setter Property="DataGrid.VerticalAlignment" Value="Top"/>
+        <Setter Property="DataGrid.AlternatingRowBackground" Value="Transparent"/>
+        <Setter Property="DataGrid.Background" Value="Transparent"/>
+        <Setter Property="DataGrid.BorderBrush" Value="Transparent"/>
+        <Setter Property="DataGrid.FontWeight" Value="Bold"/>
+        <Setter Property="DataGrid.Foreground" Value="Black"/>
+        <Setter Property="DataGrid.HorizontalGridLinesBrush" Value="Transparent"/>
+        <Setter Property="DataGrid.RowBackground" Value="Transparent"/>
+        <Setter Property="DataGrid.GridLinesVisibility" Value="All"/>
+    </Style>
+</ResourceDictionary>

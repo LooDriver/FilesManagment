@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <LinearGradientBrush x:Key="GradBrush4">
+        <GradientStop x:Name="GradientStop7" Offset="0.5" Color="#595e98" />
+        <GradientStop x:Name="GradientStop8" Offset="1" Color="#aaa4e0" />
+    </LinearGradientBrush>
+    <Storyboard x:Key="AnimationTheme4">
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop7}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="#595e98"
+                                To="#aaa4e0"
+                                Duration="0:0:2" />
+        <ColorAnimation
+                                AutoReverse="True"
+                                RepeatBehavior="Forever"
+                                Storyboard.TargetName="{Binding ElementName=GradientStop8}"
+                                Storyboard.TargetProperty="Background.Color"
+                                From="#aaa4e0"
+                                To="#595e98"
+                                Duration="0:0:2" />
+    </Storyboard>
+</ResourceDictionary>
